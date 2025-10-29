@@ -1,8 +1,633 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Spicy-Box</title>
-  <h1>Spicy-Box</h1>
-  <p>Xin chào từ GitHub Pages của tổ chức!</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spicy-Box | Chia tiền thông minh</title>
+    <meta
+      name="description"
+      content="Trang giới thiệu dự án Spicy-Box (Bill-Split) cho bài tập lớn: tên dự án, mô tả vấn đề, tính năng chính, screenshot, công nghệ, thành viên, liên kết GitHub và tutorial từng bước."
+    />
+    <meta property="og:title" content="Spicy-Box | Chia tiền thông minh" />
+    <meta
+      property="og:description"
+      content="Giới thiệu & hướng dẫn nhanh để các nhóm tái tạo đầy đủ trong 1 tiết học."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/cover.png" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="icon" href="assets/favicon.svg" />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: #0f172a;
+        --muted: #94a3b8;
+        --text: #e2e8f0;
+        --brand: #0ea5e9;
+        --ok: #10b981;
+        --warn: #f59e0b;
+        --bad: #ef4444;
+        --radius: 18px;
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui, -apple-system, Segoi UI, Roboto;
+        background: linear-gradient(
+          180deg,
+          #0b1220 0%,
+          #0b1220 40%,
+          #0a1020 100%
+        );
+        color: var(--text);
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(11, 18, 32, 0.8);
+        backdrop-filter: saturate(120%) blur(10px);
+        z-index: 10;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 0;
+      }
+      .nav a.logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        font-weight: 700;
+      }
+      .nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav ul a {
+        padding: 8px 12px;
+        border-radius: 10px;
+        color: var(--text);
+      }
+      .nav ul a:hover {
+        background: rgba(148, 163, 184, 0.1);
+      }
+
+      .hero {
+        padding: 64px 0 40px;
+      }
+      .tag {
+        display: inline-block;
+        padding: 6px 10px;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      h1 {
+        font-size: 44px;
+        line-height: 1.1;
+        margin: 14px 0 10px;
+      }
+      .subtitle {
+        color: var(--muted);
+        max-width: 800px;
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .btn {
+        background: var(--brand);
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        box-shadow: var(--shadow);
+      }
+      .btn.ghost {
+        background: transparent;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        color: var(--text);
+      }
+
+      section {
+        padding: 40px 0;
+        border-top: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      h2 {
+        font-size: 28px;
+        margin: 0 0 16px;
+      }
+      p {
+        margin: 8px 0;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .grid.cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid.cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid.cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      @media (max-width: 900px) {
+        .grid.cols-2,
+        .grid.cols-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .badge {
+        display: inline-block;
+        background: rgba(14, 165, 233, 0.12);
+        color: #e0f2fe;
+        border: 1px solid rgba(14, 165, 233, 0.35);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+        margin: 4px 6px 0 0;
+      }
+      .list {
+        padding-left: 18px;
+      }
+      .list li {
+        margin: 8px 0;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 14px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      @media (max-width: 900px) {
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery img {
+          height: 170px;
+        }
+      }
+
+      .step {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .step .num {
+        min-width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: #0b2a3a;
+        border: 1px solid rgba(14, 165, 233, 0.4);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+      code,
+      pre {
+        background: #0b2235;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        padding: 0.2em 0.45em;
+        border-radius: 8px;
+      }
+      pre {
+        padding: 14px;
+        overflow: auto;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+      }
+      @media (max-width: 960px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+      footer {
+        padding: 40px 0;
+        color: var(--muted);
+      }
+
+      /* Canvas section */
+      .bmc-figure {
+        margin: 0;
+      }
+      .bmc-img {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        box-shadow: var(--shadow);
+      }
+      .bmc-caption {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 8px;
+      }
+
+      /* ==== Behance Embed ==== */
+      .embeds {
+        display: grid;
+        gap: 18px;
+      }
+      .embeds.cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      @media (max-width: 900px) {
+        .embeds.cols-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .embed-card {
+        background: var(--panel);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: var(--radius);
+        padding: 0;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .embed-media {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9; /* responsive */
+        background: #0b2235;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      .embed-media iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+      }
+      .embed-caption {
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .embed-caption .title {
+        font-weight: 600;
+      }
+      .embed-caption .ext {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .embed-caption .ext a {
+        color: var(--brand);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="logo" href="#top" aria-label="Spicy-Box logo">
+          <img src="./Logo.svg" alt="logo" width="24" height="24" />
+          <span>Spicy-Box</span>
+        </a>
+        <ul>
+          <li><a href="#gioi-thieu">Giới thiệu</a></li>
+          <li><a href="#tinh-nang">Tính năng</a></li>
+          <li><a href="#canvas">Canvas</a></li>
+          <li><a href="#behance">Behance</a></li>
+          <!-- NEW -->
+          <li><a href="#screenshots">Screenshot</a></li>
+          <li><a href="#cong-nghe">Công nghệ</a></li>
+          <li><a href="#thanh-vien">Thành viên</a></li>
+          <li><a href="#lien-ket">Liên kết</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <span class="tag">Bài tập lớn • GitHub Pages</span>
+        <h1>Spicy-Box – Ứng dụng chia tiền nhóm nhanh & minh bạch</h1>
+        <p class="subtitle">
+          Giúp nhóm bạn đi ăn/chia hoá đơn một cách <strong>chính xác</strong>,
+          <strong>nhanh</strong> và <strong>không còn cãi nhau</strong>. Trang
+          này tổng hợp đầy đủ: tên dự án, vấn đề, tính năng chính, hình ảnh,
+          công nghệ, thành viên, liên kết GitHub và
+          <strong>tutorial chi tiết</strong> để nhóm khác có thể thực hiện toàn
+          bộ yêu cầu trong 1 tiết.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#huong-dan">Bắt đầu tutorial</a>
+          <a class="btn ghost" href="#lien-ket">Xem tài liệu/Wiki</a>
+        </div>
+      </section>
+
+      <section id="gioi-thieu" class="container two-col">
+        <div class="card">
+          <h2>1) Tên dự án & mô tả vấn đề</h2>
+          <p>
+            <strong>Spicy-Box</strong> giải quyết bài toán chia tiền khi đi
+            ăn/đi chơi theo <em>món</em> hoặc <em>tỉ lệ</em>, hỗ trợ lưu lịch sử
+            và xuất báo cáo. Vấn đề thường gặp: hoá đơn lộn xộn, chụp ảnh mờ,
+            mỗi người ăn khác món, quên ghi nợ, nhầm lẫn khi hoàn tiền.
+          </p>
+          <ul class="list">
+            <li>
+              <strong>Đối tượng:</strong> Nhóm bạn, CLB, lớp học, team công ty.
+            </li>
+            <li>
+              <strong>Tình huống:</strong> Tạo sự kiện &gt; thêm hoá đơn &gt;
+              gán món cho người &gt; tự động tính &gt; thanh toán.
+            </li>
+            <li>
+              <strong>Giá trị:</strong> minh bạch, tự động hoá, đồng bộ đa thiết
+              bị.
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>2) Tính năng nổi bật (tóm tắt)</h2>
+          <ul class="list">
+            <li>
+              📸 <strong>OCR hoá đơn</strong> (nhận dạng mục & giá; có chỉnh sửa
+              thủ công).
+            </li>
+            <li>
+              🧮 <strong>Chia theo món/định lượng</strong>, chia đều, chia theo
+              trọng số.
+            </li>
+            <li>
+              👥 <strong>Nhóm & sự kiện</strong>: mời thành viên, phân quyền.
+            </li>
+            <li>💸 <strong>Gợi ý hoàn nợ</strong> tối ưu số giao dịch.</li>
+            <li>📄 <strong>Xuất PDF/Excel</strong>, thống kê theo tháng.</li>
+            <li>🌐 <strong>Đa ngôn ngữ</strong>, hoạt động offline-first.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- BUSINESS MODEL CANVAS -->
+      <section id="canvas" class="container">
+        <h2>Business Model Canvas</h2>
+        <div class="card">
+          <figure class="bmc-figure">
+            <!-- Bạn có thể đổi lại thành assets/bmc.png để tiện quản lý -->
+            <img
+              src="Business Canvas Model.png"
+              alt="Business Model Canvas của Spicy-Box"
+              class="bmc-img"
+            />
+            <figcaption class="bmc-caption">
+              Bản Canvas tóm tắt vấn đề, giải pháp, giá trị, khách hàng, kênh,
+              chi phí, doanh thu và chỉ số của Spicy-Box.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- BEHANCE EMBED -->
+      <section id="behance" class="container">
+        <h2>8) Behance Case Study</h2>
+        <div class="embeds">
+          <figure class="embed-card">
+            <div class="embed-media">
+              <iframe
+                src="https://www.behance.net/embed/project/237372511?ilo0=1"
+                height="316"
+                width="404"
+                allowfullscreen
+                lazyload
+                frameborder="0"
+                allow="clipboard-write"
+                refererPolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+            <figcaption class="embed-caption">
+              <span class="title">Spicy-Box • Case Study</span>
+              <span class="ext">
+                Xem trên
+                <a
+                  href="https://www.behance.net/gallery/237372511"
+                  target="_blank"
+                  rel="noopener"
+                  >Behance</a
+                >
+              </span>
+            </figcaption>
+          </figure>
+
+          <!-- Bạn có thể nhân bản block này cho các project khác -->
+          <!--
+          <figure class="embed-card">
+            <div class="embed-media">
+              <iframe
+                src="https://www.behance.net/embed/project/PROJECT_ID?ilo0=1"
+                title="Behance – Tên project"
+                loading="lazy"
+                allowfullscreen
+                allow="clipboard-write"
+                referrerpolicy="strict-origin-when-cross-origin">
+              </iframe>
+            </div>
+            <figcaption class="embed-caption">
+              <span class="title">Tên project khác</span>
+              <span class="ext">
+                Xem trên
+                <a href="https://www.behance.net/gallery/PROJECT_ID" target="_blank" rel="noopener">Behance</a>
+              </span>
+            </figcaption>
+          </figure>
+          -->
+        </div>
+      </section>
+
+      <section id="tinh-nang" class="container">
+        <h2>3) Tính năng chính (chi tiết)</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Nhập hoá đơn</h3>
+            <p>Thêm thủ công hoặc chụp ảnh để OCR, tự nhóm các mục tương tự.</p>
+          </div>
+          <div class="card">
+            <h3>Thuế & phí</h3>
+            <p>Phân bổ VAT/Service charge theo % hoặc theo món.</p>
+          </div>
+          <div class="card">
+            <h3>Thanh toán</h3>
+            <p>
+              Gợi ý luồng chuyển tiền tối thiểu; ghi nhận trạng thái đã/đang nợ.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Báo cáo</h3>
+            <p>Biểu đồ chi tiêu, xuất <code>PDF</code>/<code>CSV</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="screenshots" class="container">
+        <h2>4) Screenshot</h2>
+        <div class="gallery">
+          <img src="assets/s1.png" alt="Màn hình tạo sự kiện" />
+          <img src="assets/s2.png" alt="OCR hoá đơn" />
+          <img src="assets/s3.png" alt="Gán món cho thành viên" />
+          <img src="assets/s4.png" alt="Kết quả chia tiền" />
+          <img src="assets/s5.png" alt="Danh sách nợ" />
+          <img src="assets/s6.png" alt="Báo cáo & Export" />
+        </div>
+      </section>
+
+      <section id="cong-nghe" class="container">
+        <h2>5) Công nghệ sử dụng</h2>
+        <div class="card">
+          <p>
+            <span class="badge">Mobile</span><span class="badge">Backend</span>
+            <span class="badge">Database</span><span class="badge">Auth</span>
+            <span class="badge">OCR</span><span class="badge">CI/CD</span>
+          </p>
+          <ul class="list">
+            <li>
+              Mobile: React Native/Expo (hoặc Flutter) – UI theo thiết kế Figma.
+            </li>
+            <li>Backend: Python (FastAPI)</li>
+            <li>DB: MongoDB.</li>
+            <li>Auth: OAuth 2.0 (Google), JWT.</li>
+            <li>OCR: Tesseract + hậu xử lý (regex, heuristic).</li>
+            <li>DevOps: Docker Compose, GitHub Actions.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="thanh-vien" class="container">
+        <h2>6) Thành viên nhóm</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <ul class="list">
+              <li><strong>PM/Design:</strong> <em>Nguyễn Tuấn Anh</em></li>
+              <li><strong>Thành viên:</strong> <em>Trần Trung Kiên</em></li>
+              <li><strong>Thành viên:</strong> <em>Dương Thanh Tú</em></li>
+              <li><strong>Thành viên:</strong> <em>Vương Thanh Phương</em></li>
+            </ul>
+          </div>
+          <div class="card">
+            <p>
+              <strong>Liên hệ:</strong>
+              <a href="mailto:anh.nguyentuan073@hcmut.edu.vn"
+                >anh.nguyentuan073@hcmut.edu.vn</a
+              >
+            </p>
+            <p>
+              <strong>Giảng viên:</strong> <em>Hoàng Lê Hải Thanh</em> •
+              <strong>Lớp:</strong> <em>CN01</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lien-ket" class="container">
+        <h2>7) Tài liệu & liên kết</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Tài liệu chính</h3>
+            <ul class="list">
+              <li>
+                📖 Wiki:
+                <a
+                  href="https://github.com/Spicy-Box/bill-split-docs/wiki"
+                  target="_blank"
+                  rel="noopener"
+                  >Spicy-Box Docs/Wiki</a
+                >
+              </li>
+              <li>🗺️ Kiến trúc, flow: xem trong Wiki.</li>
+              <li>🧪 Test cases: /docs/test-cases (cập nhật).</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Kho mã nguồn (ví dụ)</h3>
+            <ul class="list">
+              <li>
+                🧱 Docs:
+                <a
+                  href="https://github.com/Spicy-Box/bill-split-docs"
+                  target="_blank"
+                  rel="noopener"
+                  >bill-split-docs</a
+                >
+              </li>
+              <li>
+                💻 Frontend:
+                <a
+                  href="https://github.com/Spicy-Box/bill-split-fe"
+                  target="_blank"
+                  rel="noopener"
+                  >Front-end</a
+                >
+              </li>
+              <li>
+                🗄️ Backend:
+                <a
+                  href="https://github.com/Spicy-Box/bill-split-be"
+                  target="_blank"
+                  rel="noopener"
+                  >Back-end</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <p>
+            © <span id="year"></span> Spicy-Box Team. Made with ❤ for the course
+            demo.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
