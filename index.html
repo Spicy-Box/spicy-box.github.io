@@ -1,335 +1,296 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Divvy | Chia tiền thông minh</title>
-    <meta
-      name="description"
-      content="Trang giới thiệu dự án Spicy-Box (Bill-Split) cho bài tập lớn: tên dự án, mô tả vấn đề, tính năng chính, screenshot, công nghệ, thành viên, liên kết GitHub và tutorial từng bước."
-    />
-    <meta property="og:title" content="Spicy-Box | Chia tiền thông minh" />
-    <meta
-      property="og:description"
-      content="Giới thiệu & hướng dẫn nhanh để các nhóm tái tạo đầy đủ trong 1 tiết học."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/cover.png" />
-    <meta name="theme-color" content="#0ea5e9" />
-    <link rel="icon" href="assets/favicon.svg" />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="container nav">
-        <a class="logo" href="#top" aria-label="Spicy-Box logo">
-          <img src="./Logo.svg" alt="logo" width="24" height="24" />
-          <span>Divvy</span>
-        </a>
-        <ul>
-          <li><a href="#gioi-thieu">Giới thiệu</a></li>
-          <li><a href="#tinh-nang">Tính năng</a></li>
-          <li><a href="#canvas">Canvas</a></li>
-          <li><a href="#behance">Behance</a></li>
-          <!-- NEW -->
-          <li><a href="#screenshots">Screenshot</a></li>
-          <li><a href="#cong-nghe">Công nghệ</a></li>
-          <li><a href="#thanh-vien">Thành viên</a></li>
-          <li><a href="#lien-ket">Liên kết</a></li>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hi | Chia tiền thông minh</title>
+  <meta name="description"
+    content="Trang giới thiệu dự án Spicy-Box (Bill-Split) cho bài tập lớn: tên dự án, mô tả vấn đề, tính năng chính, screenshot, công nghệ, thành viên, liên kết GitHub và tutorial từng bước." />
+  <meta property="og:title" content="Spicy-Box | Chia tiền thông minh" />
+  <meta property="og:description" content="Giới thiệu & hướng dẫn nhanh để các nhóm tái tạo đầy đủ trong 1 tiết học." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/cover.png" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="Spicy-Box logo">
+        <img src="./Logo.svg" alt="logo" width="24" height="24" />
+        <span>Divvy</span>
+      </a>
+      <ul>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#tinh-nang">Tính năng</a></li>
+        <li><a href="#canvas">Canvas</a></li>
+        <li><a href="#behance">Behance</a></li>
+        <!-- NEW -->
+        <li><a href="#screenshots">Screenshot</a></li>
+        <li><a href="#cong-nghe">Công nghệ</a></li>
+        <li><a href="#thanh-vien">Thành viên</a></li>
+        <li><a href="#lien-ket">Liên kết</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <span class="tag">Bài tập lớn • GitHub Pages</span>
+      <h1>Divvy – Ứng dụng chia tiền nhóm nhanh & minh bạch</h1>
+      <p class="subtitle">
+        Giúp nhóm bạn đi ăn/chia hoá đơn một cách <strong>chính xác</strong>,
+        <strong>nhanh</strong> và <strong>không còn cãi nhau</strong>. Trang
+        này tổng hợp đầy đủ: tên dự án, vấn đề, tính năng chính, hình ảnh,
+        công nghệ, thành viên, liên kết GitHub và
+        <strong>tutorial chi tiết</strong> để nhóm khác có thể thực hiện toàn
+        bộ yêu cầu trong 1 tiết.
+      </p>
+      <div class="cta">
+        <a class="btn ghost" href="#lien-ket">Xem tài liệu/Wiki</a>
+      </div>
+    </section>
+
+    <section id="gioi-thieu" class="container two-col">
+      <div class="card">
+        <h2>1) Tên dự án & mô tả vấn đề</h2>
+        <p>
+          <strong>Spicy-Box</strong> giải quyết bài toán chia tiền khi đi
+          ăn/đi chơi theo <em>món</em> hoặc <em>tỉ lệ</em>, hỗ trợ lưu lịch sử
+          và xuất báo cáo. Vấn đề thường gặp: hoá đơn lộn xộn, chụp ảnh mờ,
+          mỗi người ăn khác món, quên ghi nợ, nhầm lẫn khi hoàn tiền.
+        </p>
+        <ul class="list">
+          <li>
+            <strong>Đối tượng:</strong> Nhóm bạn, CLB, lớp học, team công ty.
+          </li>
+          <li>
+            <strong>Tình huống:</strong> Tạo sự kiện &gt; thêm hoá đơn &gt;
+            gán món cho người &gt; tự động tính &gt; thanh toán.
+          </li>
+          <li>
+            <strong>Giá trị:</strong> minh bạch, tự động hoá, đồng bộ đa thiết
+            bị.
+          </li>
         </ul>
       </div>
-    </header>
+      <div class="card">
+        <h2>2) Tính năng nổi bật (tóm tắt)</h2>
+        <ul class="list">
+          <li>
+            📸 <strong>OCR hoá đơn</strong> (nhận dạng mục & giá; có chỉnh sửa
+            thủ công).
+          </li>
+          <li>
+            🧮 <strong>Chia theo món/định lượng</strong>, chia đều, chia theo
+            trọng số.
+          </li>
+          <li>
+            👥 <strong>Nhóm & sự kiện</strong>: mời thành viên, phân quyền.
+          </li>
+          <li>💸 <strong>Gợi ý hoàn nợ</strong> tối ưu số giao dịch.</li>
+          <li>📄 <strong>Xuất PDF/Excel</strong>, thống kê theo tháng.</li>
+          <li>🌐 <strong>Đa ngôn ngữ</strong>, hoạt động offline-first.</li>
+        </ul>
+      </div>
+    </section>
 
-    <main id="top">
-      <section class="hero container">
-        <span class="tag">Bài tập lớn • GitHub Pages</span>
-        <h1>Divvy – Ứng dụng chia tiền nhóm nhanh & minh bạch</h1>
-        <p class="subtitle">
-          Giúp nhóm bạn đi ăn/chia hoá đơn một cách <strong>chính xác</strong>,
-          <strong>nhanh</strong> và <strong>không còn cãi nhau</strong>. Trang
-          này tổng hợp đầy đủ: tên dự án, vấn đề, tính năng chính, hình ảnh,
-          công nghệ, thành viên, liên kết GitHub và
-          <strong>tutorial chi tiết</strong> để nhóm khác có thể thực hiện toàn
-          bộ yêu cầu trong 1 tiết.
+    <!-- BUSINESS MODEL CANVAS -->
+    <section id="canvas" class="container">
+      <h2>Business Model Canvas</h2>
+      <div class="card">
+        <figure class="bmc-figure">
+          <!-- Bạn có thể đổi lại thành assets/bmc.png để tiện quản lý -->
+          <img src="Business Canvas Model.png" alt="Business Model Canvas của Spicy-Box" class="bmc-img" />
+          <figcaption class="bmc-caption">
+            Bản Canvas tóm tắt vấn đề, giải pháp, giá trị, khách hàng, kênh,
+            chi phí, doanh thu và chỉ số của Spicy-Box.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- BEHANCE EMBED -->
+    <section id="behance" class="container">
+      <h2>3) Behance Case Study</h2>
+      <div class="embeds">
+        <figure class="embed-card">
+          <div class="embed-media">
+            <iframe src="https://www.behance.net/embed/project/237372511?ilo0=1" height="316" width="404"
+              allowfullscreen lazyload frameborder="0" allow="clipboard-write"
+              refererPolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <figcaption class="embed-caption">
+            <span class="title">Spicy-Box • Case Study</span>
+            <span class="ext">
+              Xem trên
+              <a href="https://www.behance.net/gallery/237372511" target="_blank" rel="noopener">Behance</a>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="tinh-nang" class="container">
+      <h2>4) Tính năng chính (chi tiết)</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Nhập hoá đơn</h3>
+          <p>Thêm thủ công hoặc chụp ảnh để OCR, tự nhóm các mục tương tự.</p>
+        </div>
+        <div class="card">
+          <h3>Thuế & phí</h3>
+          <p>Phân bổ VAT/Service charge theo % hoặc theo món.</p>
+        </div>
+        <div class="card">
+          <h3>Thanh toán</h3>
+          <p>
+            Gợi ý luồng chuyển tiền tối thiểu; ghi nhận trạng thái đã/đang nợ.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Báo cáo</h3>
+          <p>Biểu đồ chi tiêu, xuất <code>PDF</code>/<code>CSV</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="container">
+      <h2>5) Screenshot</h2>
+      <div class="gallery">
+        <img src="images/Mockup Main - 1.jpg" alt="Màn hình tạo sự kiện" />
+        <img src="images/Mockup Main - 2.jpg" alt="OCR hoá đơn" />
+        <img src="images/Mockup Main - 3.jpg" alt="Gán món cho thành viên" />
+        <img src="images/Mockup Main - 4.jpg" alt="Kết quả chia tiền" />
+        <img src="images/Mockup Main - 5.jpg" alt="Danh sách nợ" />
+        <!-- <img src="assets/s6.png" alt="Báo cáo & Export" /> -->
+      </div>
+    </section>
+
+    <section id="cong-nghe" class="container">
+      <h2>6) Công nghệ sử dụng</h2>
+      <div class="card">
+        <p>
+          <span class="badge">Mobile</span><span class="badge">Backend</span>
+          <span class="badge">Database</span><span class="badge">Auth</span>
+          <span class="badge">OCR</span><span class="badge">CI/CD</span>
         </p>
-        <div class="cta">
-          <a class="btn ghost" href="#lien-ket">Xem tài liệu/Wiki</a>
-        </div>
-      </section>
+        <ul class="list">
+          <li>
+            Mobile: React Native/Expo (hoặc Flutter) – UI theo thiết kế Figma.
+          </li>
+          <li>Backend: Python (FastAPI)</li>
+          <li>DB: MongoDB.</li>
+          <li>Auth: OAuth 2.0 (Google), JWT.</li>
+          <li>OCR: Tesseract + hậu xử lý (regex, heuristic).</li>
+          <li>DevOps: Docker Compose, GitHub Actions.</li>
+        </ul>
+      </div>
+    </section>
 
-      <section id="gioi-thieu" class="container two-col">
+    <section id="lo-trinh" class="container">
+      <h2>7) Lộ trình phát triển</h2>
+      <div class="card">
+        <ul class="list">
+          <li>
+            📅 <strong>Tháng 9/2025:</strong> Tìm hiểu ý tưởng dự án, khởi
+            động dự án, tạo khảo sát và nghiên cứu các ứng dụng liên quan.
+          </li>
+          <li>
+            ⚙️ <strong>Tháng 10/2025:</strong> Tạo GitHub Organization, thực
+            hiện thiết kế Figma, Behance và xây dựng GitHub Pages.
+          </li>
+          <li>
+            🚀 <strong>Tháng 11/2025:</strong> Bắt tay vào hiện thực hóa ứng
+            dụng Divvy (App development). Hiện thực giao diện (Frontend) của
+            ứng dụng bằng framework React Native và Expo.
+          </li>
+          <li>
+            🚀 <strong>Tháng 12/2025:</strong> Hiện thực backend của ứng dụng
+            bằng FastAPI.
+          </li>
+        </ul>
+      </div>
+      <p class="subtitle">
+        📈 Dự án được phát triển theo hướng cải tiến liên tục — từ ý tưởng,
+        thiết kế, cho đến giai đoạn lập trình và thử nghiệm.
+      </p>
+    </section>
+
+    <section id="thanh-vien" class="container">
+      <h2>8) Thành viên nhóm</h2>
+      <div class="grid cols-2">
         <div class="card">
-          <h2>1) Tên dự án & mô tả vấn đề</h2>
-          <p>
-            <strong>Spicy-Box</strong> giải quyết bài toán chia tiền khi đi
-            ăn/đi chơi theo <em>món</em> hoặc <em>tỉ lệ</em>, hỗ trợ lưu lịch sử
-            và xuất báo cáo. Vấn đề thường gặp: hoá đơn lộn xộn, chụp ảnh mờ,
-            mỗi người ăn khác món, quên ghi nợ, nhầm lẫn khi hoàn tiền.
-          </p>
           <ul class="list">
-            <li>
-              <strong>Đối tượng:</strong> Nhóm bạn, CLB, lớp học, team công ty.
-            </li>
-            <li>
-              <strong>Tình huống:</strong> Tạo sự kiện &gt; thêm hoá đơn &gt;
-              gán món cho người &gt; tự động tính &gt; thanh toán.
-            </li>
-            <li>
-              <strong>Giá trị:</strong> minh bạch, tự động hoá, đồng bộ đa thiết
-              bị.
-            </li>
+            <li><strong>PM/Design:</strong> <em>Nguyễn Tuấn Anh</em></li>
+            <li><strong>Thành viên:</strong> <em>Trần Trung Kiên</em></li>
+            <li><strong>Thành viên:</strong> <em>Dương Thanh Tú</em></li>
+            <li><strong>Thành viên:</strong> <em>Vương Thanh Phương</em></li>
           </ul>
         </div>
-        <div class="card">
-          <h2>2) Tính năng nổi bật (tóm tắt)</h2>
-          <ul class="list">
-            <li>
-              📸 <strong>OCR hoá đơn</strong> (nhận dạng mục & giá; có chỉnh sửa
-              thủ công).
-            </li>
-            <li>
-              🧮 <strong>Chia theo món/định lượng</strong>, chia đều, chia theo
-              trọng số.
-            </li>
-            <li>
-              👥 <strong>Nhóm & sự kiện</strong>: mời thành viên, phân quyền.
-            </li>
-            <li>💸 <strong>Gợi ý hoàn nợ</strong> tối ưu số giao dịch.</li>
-            <li>📄 <strong>Xuất PDF/Excel</strong>, thống kê theo tháng.</li>
-            <li>🌐 <strong>Đa ngôn ngữ</strong>, hoạt động offline-first.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- BUSINESS MODEL CANVAS -->
-      <section id="canvas" class="container">
-        <h2>Business Model Canvas</h2>
-        <div class="card">
-          <figure class="bmc-figure">
-            <!-- Bạn có thể đổi lại thành assets/bmc.png để tiện quản lý -->
-            <img
-              src="Business Canvas Model.png"
-              alt="Business Model Canvas của Spicy-Box"
-              class="bmc-img"
-            />
-            <figcaption class="bmc-caption">
-              Bản Canvas tóm tắt vấn đề, giải pháp, giá trị, khách hàng, kênh,
-              chi phí, doanh thu và chỉ số của Spicy-Box.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <!-- BEHANCE EMBED -->
-      <section id="behance" class="container">
-        <h2>3) Behance Case Study</h2>
-        <div class="embeds">
-          <figure class="embed-card">
-            <div class="embed-media">
-              <iframe
-                src="https://www.behance.net/embed/project/237372511?ilo0=1"
-                height="316"
-                width="404"
-                allowfullscreen
-                lazyload
-                frameborder="0"
-                allow="clipboard-write"
-                refererPolicy="strict-origin-when-cross-origin"
-              ></iframe>
-            </div>
-            <figcaption class="embed-caption">
-              <span class="title">Spicy-Box • Case Study</span>
-              <span class="ext">
-                Xem trên
-                <a
-                  href="https://www.behance.net/gallery/237372511"
-                  target="_blank"
-                  rel="noopener"
-                  >Behance</a
-                >
-              </span>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-      <section id="tinh-nang" class="container">
-        <h2>4) Tính năng chính (chi tiết)</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>Nhập hoá đơn</h3>
-            <p>Thêm thủ công hoặc chụp ảnh để OCR, tự nhóm các mục tương tự.</p>
-          </div>
-          <div class="card">
-            <h3>Thuế & phí</h3>
-            <p>Phân bổ VAT/Service charge theo % hoặc theo món.</p>
-          </div>
-          <div class="card">
-            <h3>Thanh toán</h3>
-            <p>
-              Gợi ý luồng chuyển tiền tối thiểu; ghi nhận trạng thái đã/đang nợ.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Báo cáo</h3>
-            <p>Biểu đồ chi tiêu, xuất <code>PDF</code>/<code>CSV</code>.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="screenshots" class="container">
-        <h2>5) Screenshot</h2>
-        <div class="gallery">
-          <img src="images/Mockup Main - 1.jpg" alt="Màn hình tạo sự kiện" />
-          <img src="images/Mockup Main - 2.jpg" alt="OCR hoá đơn" />
-          <img src="images/Mockup Main - 3.jpg" alt="Gán món cho thành viên" />
-          <img src="images/Mockup Main - 4.jpg" alt="Kết quả chia tiền" />
-          <img src="images/Mockup Main - 5.jpg" alt="Danh sách nợ" />
-          <!-- <img src="assets/s6.png" alt="Báo cáo & Export" /> -->
-        </div>
-      </section>
-
-      <section id="cong-nghe" class="container">
-        <h2>6) Công nghệ sử dụng</h2>
         <div class="card">
           <p>
-            <span class="badge">Mobile</span><span class="badge">Backend</span>
-            <span class="badge">Database</span><span class="badge">Auth</span>
-            <span class="badge">OCR</span><span class="badge">CI/CD</span>
+            <strong>Liên hệ:</strong>
+            <a href="mailto:anh.nguyen2252038@hcmut.edu.vn">anh.nguyen2252038@hcmut.edu.vn</a>
           </p>
-          <ul class="list">
-            <li>
-              Mobile: React Native/Expo (hoặc Flutter) – UI theo thiết kế Figma.
-            </li>
-            <li>Backend: Python (FastAPI)</li>
-            <li>DB: MongoDB.</li>
-            <li>Auth: OAuth 2.0 (Google), JWT.</li>
-            <li>OCR: Tesseract + hậu xử lý (regex, heuristic).</li>
-            <li>DevOps: Docker Compose, GitHub Actions.</li>
-          </ul>
+          <p>
+            <strong>Giảng viên:</strong> <em>Hoàng Lê Hải Thanh</em> •
+            <strong>Lớp:</strong> <em>CN01</em>
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="lo-trinh" class="container">
-        <h2>7) Lộ trình phát triển</h2>
+    <section id="lien-ket" class="container">
+      <h2>9) Tài liệu & liên kết</h2>
+      <div class="grid cols-2">
         <div class="card">
+          <h3>Tài liệu chính</h3>
           <ul class="list">
             <li>
-              📅 <strong>Tháng 9/2025:</strong> Tìm hiểu ý tưởng dự án, khởi
-              động dự án, tạo khảo sát và nghiên cứu các ứng dụng liên quan.
+              📖 Wiki:
+              <a href="https://github.com/Spicy-Box/bill-split-docs/wiki" target="_blank" rel="noopener">Spicy-Box
+                Docs/Wiki</a>
+            </li>
+            <li>🗺️ Kiến trúc, flow: xem trong Wiki.</li>
+            <li>🧪 Test cases: /docs/test-cases (cập nhật).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Kho mã nguồn (ví dụ)</h3>
+          <ul class="list">
+            <li>
+              🧱 Docs:
+              <a href="https://github.com/Spicy-Box/bill-split-docs" target="_blank" rel="noopener">bill-split-docs</a>
             </li>
             <li>
-              ⚙️ <strong>Tháng 10/2025:</strong> Tạo GitHub Organization, thực
-              hiện thiết kế Figma, Behance và xây dựng GitHub Pages.
+              💻 Frontend:
+              <a href="https://github.com/Spicy-Box/bill-split-fe" target="_blank" rel="noopener">Front-end</a>
             </li>
             <li>
-              🚀 <strong>Tháng 11/2025:</strong> Bắt tay vào hiện thực hóa ứng
-              dụng Divvy (App development). Hiện thực giao diện (Frontend) của
-              ứng dụng bằng framework React Native và Expo.
-            </li>
-            <li>
-              🚀 <strong>Tháng 12/2025:</strong> Hiện thực backend của ứng dụng
-              bằng FastAPI.
+              🗄️ Backend:
+              <a href="https://github.com/Spicy-Box/bill-split-be" target="_blank" rel="noopener">Back-end</a>
             </li>
           </ul>
         </div>
-        <p class="subtitle">
-          📈 Dự án được phát triển theo hướng cải tiến liên tục — từ ý tưởng,
-          thiết kế, cho đến giai đoạn lập trình và thử nghiệm.
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>
+          © <span id="year"></span> Spicy-Box Team. Made with ❤ for the course
+          demo.
         </p>
-      </section>
+      </div>
+    </footer>
+  </main>
 
-      <section id="thanh-vien" class="container">
-        <h2>8) Thành viên nhóm</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <ul class="list">
-              <li><strong>PM/Design:</strong> <em>Nguyễn Tuấn Anh</em></li>
-              <li><strong>Thành viên:</strong> <em>Trần Trung Kiên</em></li>
-              <li><strong>Thành viên:</strong> <em>Dương Thanh Tú</em></li>
-              <li><strong>Thành viên:</strong> <em>Vương Thanh Phương</em></li>
-            </ul>
-          </div>
-          <div class="card">
-            <p>
-              <strong>Liên hệ:</strong>
-              <a href="mailto:anh.nguyen2252038@hcmut.edu.vn"
-                >anh.nguyen2252038@hcmut.edu.vn</a
-              >
-            </p>
-            <p>
-              <strong>Giảng viên:</strong> <em>Hoàng Lê Hải Thanh</em> •
-              <strong>Lớp:</strong> <em>CN01</em>
-            </p>
-          </div>
-        </div>
-      </section>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 
-      <section id="lien-ket" class="container">
-        <h2>9) Tài liệu & liên kết</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>Tài liệu chính</h3>
-            <ul class="list">
-              <li>
-                📖 Wiki:
-                <a
-                  href="https://github.com/Spicy-Box/bill-split-docs/wiki"
-                  target="_blank"
-                  rel="noopener"
-                  >Spicy-Box Docs/Wiki</a
-                >
-              </li>
-              <li>🗺️ Kiến trúc, flow: xem trong Wiki.</li>
-              <li>🧪 Test cases: /docs/test-cases (cập nhật).</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Kho mã nguồn (ví dụ)</h3>
-            <ul class="list">
-              <li>
-                🧱 Docs:
-                <a
-                  href="https://github.com/Spicy-Box/bill-split-docs"
-                  target="_blank"
-                  rel="noopener"
-                  >bill-split-docs</a
-                >
-              </li>
-              <li>
-                💻 Frontend:
-                <a
-                  href="https://github.com/Spicy-Box/bill-split-fe"
-                  target="_blank"
-                  rel="noopener"
-                  >Front-end</a
-                >
-              </li>
-              <li>
-                🗄️ Backend:
-                <a
-                  href="https://github.com/Spicy-Box/bill-split-be"
-                  target="_blank"
-                  rel="noopener"
-                  >Back-end</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <div class="container">
-          <p>
-            © <span id="year"></span> Spicy-Box Team. Made with ❤ for the course
-            demo.
-          </p>
-        </div>
-      </footer>
-    </main>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
 </html>
