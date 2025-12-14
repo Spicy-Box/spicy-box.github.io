@@ -809,6 +809,15 @@ a {
     min-height: 200px;
   }
 
+  /* Figma embed: Hide iframe on mobile, show fallback */
+  .embed-figma-desktop {
+    display: none !important;
+  }
+
+  .embed-figma-mobile {
+    display: block !important;
+  }
+
   /* h3 responsive */
   h3 {
     font-size: 18px;
@@ -1309,6 +1318,69 @@ footer {
   height: 100%;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
+}
+
+/* Disable scrolling for Behance embed */
+#behance .embed-media iframe {
+  overflow: hidden;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+#behance .embed-media iframe::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+/* Figma embed optimization for mobile */
+.embed-figma-mobile {
+  display: none;
+  /* Hidden on desktop */
+}
+
+.embed-figma-desktop {
+  display: block;
+}
+
+/* Figma mobile notice - simple link */
+.figma-mobile-notice {
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.figma-notice-text {
+  color: var(--card-text);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.figma-mobile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 8px 0;
+}
+
+.figma-mobile-link:hover {
+  color: var(--text);
+  gap: 10px;
+}
+
+.figma-mobile-link svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .embed-caption {
