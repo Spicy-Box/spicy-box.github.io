@@ -194,37 +194,6 @@ a {
   margin: 0;
 }
 
-.nav-logo-item {
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.nav-logo-item .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text);
-  font-weight: 700;
-  font-size: 20px;
-  text-decoration: none;
-  padding: 8px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.nav-logo-item .logo:hover {
-  background: rgba(148, 163, 184, 0.1);
-}
-
-.sidebar.collapsed .nav-logo-item .logo {
-  justify-content: center;
-}
-
-.sidebar.collapsed .nav-logo-item #logo-text {
-  display: none;
-}
-
 .nav-menu a {
   display: flex;
   align-items: center;
@@ -346,7 +315,7 @@ a {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     width: 240px !important;
-    padding: 24px 16px !important;
+    padding: 64px 16px 24px 16px !important;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   }
   
@@ -357,14 +326,15 @@ a {
   /* Force full width on mobile, ignore collapsed state */
   .sidebar.collapsed {
     width: 240px !important;
-    padding: 24px 16px !important;
+    padding: 64px 16px 24px 16px !important;
   }
 
-  .sidebar.collapsed .logo {
-    justify-content: center;
+  /* Logo item always shows full on mobile */
+  .sidebar.collapsed .nav-logo-item .logo {
+    justify-content: flex-start !important;
   }
 
-  .sidebar.collapsed #logo-text {
+  .sidebar.collapsed .nav-logo-item #logo-text {
     display: inline !important;
   }
 
@@ -376,6 +346,23 @@ a {
   .sidebar.collapsed .nav-text {
     display: inline !important;
     margin-left: 12px;
+  }
+  
+  /* Ensure nav-logo-item styling is consistent on mobile */
+  .nav-logo-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 0;
+  }
+  
+  .nav-logo-item .logo {
+    justify-content: flex-start;
+    padding: 8px;
+  }
+  
+  .nav-logo-item #logo-text {
+    display: inline;
   }
 
   /* Show overlay when sidebar is open on mobile */
@@ -389,7 +376,22 @@ a {
   }
   
   .collapse-toggle {
-    display: none;
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  /* Remove any spacing that collapse-toggle might create */
+  .sidebar > .collapse-toggle {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Ensure nav-menu starts at the top on mobile */
+  .nav-menu {
+    margin-top: 0 !important;
   }
 
   
@@ -472,14 +474,15 @@ a {
   /* Keep full width on small mobile too */
   .sidebar.collapsed {
     width: 240px !important;
-    padding: 24px 16px !important;
+    padding: 64px 16px 24px 16px !important;
   }
 
-  .sidebar.collapsed .logo {
-    justify-content: center;
+  /* Logo item always shows full on mobile */
+  .sidebar.collapsed .nav-logo-item .logo {
+    justify-content: flex-start !important;
   }
 
-  .sidebar.collapsed #logo-text {
+  .sidebar.collapsed .nav-logo-item #logo-text {
     display: inline !important;
   }
 
