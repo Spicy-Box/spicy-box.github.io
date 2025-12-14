@@ -87,5 +87,57 @@ document.addEventListener("DOMContentLoaded", function () {
       closeMobileMenu();
     }
   });
+
+  // Initialize Swiper for screenshot gallery
+  if (typeof Swiper !== "undefined") {
+    const screenshotSwiper = new Swiper("#screenshot-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        968: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          slidesPerGroup: 1,
+          centeredSlides: false,
+        },
+      },
+    });
+  }
+
+  // Initialize Viewer.js for image galleries
+  if (typeof Viewer !== "undefined") {
+    // Initialize viewer for screenshot gallery (after Swiper is initialized)
+    const screenshotGallery = document.getElementById("screenshot-gallery");
+    if (screenshotGallery) {
+      new Viewer(screenshotGallery, {
+        inline: false,
+        minZoomRatio: 0.1,
+        maxZoomRatio: 4,
+      });
+    }
+
+    // Initialize viewer for canvas image
+    const canvasGallery = document.getElementById("canvas-gallery");
+    if (canvasGallery) {
+      new Viewer(canvasGallery, {
+        inline: false,
+        minZoomRatio: 0.1,
+        maxZoomRatio: 4,
+      });
+    }
+  }
 });
 

@@ -467,6 +467,49 @@ a {
     padding: 10px;
   }
 
+  /* Adjust swiper navigation on mobile */
+  .screenshot-swiper {
+    padding-left: 50px;
+    padding-right: 50px;
+    overflow: visible;
+  }
+
+  .screenshot-swiper .swiper-wrapper {
+    overflow: visible;
+  }
+
+  .screenshot-swiper .swiper-slide {
+    min-height: 320px;
+    padding: 10px;
+    overflow: visible;
+  }
+
+  .screenshot-swiper .swiper-button-next {
+    right: 0;
+  }
+
+  .screenshot-swiper .swiper-button-next {
+    right: 5px;
+  }
+
+  .screenshot-swiper .swiper-button-prev {
+    left: 5px;
+  }
+
+  .screenshot-swiper .swiper-button-next,
+  .screenshot-swiper .swiper-button-prev {
+    width: 36px;
+    height: 36px;
+    top: 45% !important;
+    transform: translateY(-50%) !important;
+    margin-top: 0 !important;
+  }
+
+  .screenshot-swiper .swiper-button-next:after,
+  .screenshot-swiper .swiper-button-prev:after {
+    font-size: 16px;
+  }
+
   .sidebar {
     width: 240px !important;
   }
@@ -895,6 +938,131 @@ p {
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Swiper styling for screenshots */
+.screenshot-swiper {
+  width: 100%;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+@media (min-width: 968px) {
+  .screenshot-swiper {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    overflow: visible;
+  }
+  
+  .screenshot-swiper .swiper-wrapper {
+    margin: 0;
+    overflow: visible;
+  }
+}
+
+.screenshot-swiper .swiper-wrapper {
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.screenshot-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 320px;
+  padding: 10px;
+  overflow: visible;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 968px) {
+  .screenshot-swiper .swiper-slide {
+    padding: 5px;
+    width: calc(50% - 0px);
+    box-sizing: border-box;
+  }
+  
+  .screenshot-swiper .swiper-button-next,
+  .screenshot-swiper .swiper-button-prev {
+    top: 45% !important;
+  }
+}
+
+.screenshot-swiper .swiper-slide img {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.screenshot-swiper .swiper-slide img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.screenshot-swiper .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.screenshot-swiper .swiper-pagination-bullet {
+  background: var(--text);
+}
+
+.screenshot-swiper .swiper-button-next,
+.screenshot-swiper .swiper-button-prev {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.9);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  top: 45% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+  z-index: 10;
+}
+
+.screenshot-swiper .swiper-button-next {
+  right: 10px;
+}
+
+.screenshot-swiper .swiper-button-prev {
+  left: 10px;
+}
+
+.screenshot-swiper .swiper-button-next:after,
+.screenshot-swiper .swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.screenshot-swiper .swiper-button-next:hover,
+.screenshot-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 900px) {
   .gallery {
@@ -927,6 +1095,13 @@ pre {
   padding: 0.2em 0.45em;
   border-radius: 8px;
 }
+
+/* Highlight PDF text in reports section */
+#tinh-nang code {
+  color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.3);
+}
 pre {
   padding: 14px;
   overflow: auto;
@@ -955,7 +1130,14 @@ footer {
   height: auto;
   border-radius: 14px;
   border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   /* box-shadow: var(--shadow); */
+}
+
+.bmc-img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .bmc-caption {
   color: var(--muted);
@@ -1019,4 +1201,50 @@ footer {
 }
 .embed-caption .ext a {
   color: var(--brand);
+}
+
+/* Viewer.js custom styling - rounded corners for zoom controls */
+.viewer-toolbar > ul > li {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.viewer-toolbar > ul > li > button {
+  border-radius: 8px;
+}
+
+.viewer-button {
+  border-radius: 8px !important;
+}
+
+.viewer-navbar {
+  border-radius: 8px;
+}
+
+.viewer-toolbar {
+  border-radius: 8px;
+}
+
+/* Viewer.js zoom in/out buttons */
+.viewer-zoom-in,
+.viewer-zoom-out {
+  border-radius: 8px !important;
+}
+
+/* Viewer.js navigation buttons */
+.viewer-prev,
+.viewer-next {
+  border-radius: 8px !important;
+}
+
+/* Viewer.js rotate buttons */
+.viewer-rotate-left,
+.viewer-rotate-right {
+  border-radius: 8px !important;
+}
+
+/* Viewer.js flip buttons */
+.viewer-flip-horizontal,
+.viewer-flip-vertical {
+  border-radius: 8px !important;
 }
