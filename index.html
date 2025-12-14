@@ -14,9 +14,9 @@
       content="Giới thiệu & hướng dẫn nhanh để các nhóm tái tạo đầy đủ trong 1 tiết học."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/cover.png" />
+    <meta property="og:image" content="Logo.svg" />
     <meta name="theme-color" content="#0ea5e9" />
-    <link rel="icon" href="assets/favicon.svg" />
+    <link rel="icon" href="Logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -49,6 +49,23 @@
           <img src="./Logo.svg" alt="logo" width="24" height="24" />
           <span id="logo-text">Divvy</span>
         </a>
+        <button
+          class="collapse-toggle"
+          aria-label="Collapse menu"
+          onclick="toggleSidebar()"
+          title="Thu nhỏ menu"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
       </div>
       <ul class="nav-menu">
         <li>
@@ -484,60 +501,63 @@
         overlay.classList.remove("active");
       }
 
-      // Close sidebar when clicking overlay on mobile
-      document
-        .getElementById("sidebarOverlay")
-        .addEventListener("click", function () {
-          closeMobileMenu();
-        });
-
-      // Close sidebar when clicking outside on mobile
-      document.addEventListener("click", function (event) {
+      // Wait for DOM to be ready
+      document.addEventListener("DOMContentLoaded", function () {
         const sidebar = document.getElementById("sidebar");
-        const menuToggle = document.querySelector(".menu-toggle");
         const overlay = document.getElementById("sidebarOverlay");
+        const menuToggle = document.querySelector(".menu-toggle");
 
-        // Only handle on mobile screens
-        if (window.innerWidth <= 968) {
-          const isClickInsideSidebar = sidebar.contains(event.target);
-          const isClickOnToggle =
-            menuToggle && menuToggle.contains(event.target);
-          const isClickOnOverlay = overlay && overlay.contains(event.target);
-
-          // If sidebar is open and click is outside sidebar and toggle button, close it
-          if (
-            sidebar.classList.contains("open") &&
-            !isClickInsideSidebar &&
-            !isClickOnToggle &&
-            !isClickOnOverlay
-          ) {
-            closeMobileMenu();
-          }
-        }
-      });
-
-      // Close sidebar when clicking on menu links (navigation)
-      document.querySelectorAll(".nav-menu a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          if (window.innerWidth <= 968) {
-            closeMobileMenu();
-          }
-        });
-      });
-
-      // Restore sidebar state on page load
-      window.addEventListener("DOMContentLoaded", function () {
-        const sidebar = document.getElementById("sidebar");
-        if (localStorage.getItem("sidebarCollapsed") === "true") {
+        // Restore sidebar collapsed state on page load
+        if (sidebar && localStorage.getItem("sidebarCollapsed") === "true") {
           sidebar.classList.add("collapsed");
         }
-      });
 
-      // Handle window resize - close mobile menu when resizing to desktop
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 968) {
-          closeMobileMenu();
+        // Close sidebar when clicking overlay on mobile
+        if (overlay) {
+          overlay.addEventListener("click", function () {
+            closeMobileMenu();
+          });
         }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener("click", function (event) {
+          // Only handle on mobile screens
+          if (window.innerWidth <= 968 && sidebar) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnToggle =
+              menuToggle && menuToggle.contains(event.target);
+            const isClickOnOverlay = overlay && overlay.contains(event.target);
+
+            // If sidebar is open and click is outside sidebar and toggle button, close it
+            if (
+              sidebar.classList.contains("open") &&
+              !isClickInsideSidebar &&
+              !isClickOnToggle &&
+              !isClickOnOverlay
+            ) {
+              closeMobileMenu();
+            }
+          }
+        });
+
+        // Close sidebar when clicking on menu links (navigation)
+        const navLinks = document.querySelectorAll(".nav-menu a");
+        if (navLinks.length > 0) {
+          navLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+              if (window.innerWidth <= 968) {
+                closeMobileMenu();
+              }
+            });
+          });
+        }
+
+        // Handle window resize - close mobile menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 968) {
+            closeMobileMenu();
+          }
+        });
       });
     </script>
   </body>
