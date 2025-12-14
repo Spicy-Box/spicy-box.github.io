@@ -44,30 +44,30 @@
       onclick="toggleMobileMenu()"
     ></div>
     <nav class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <a class="logo" href="#top" aria-label="Spicy-Box logo">
-          <img src="./Logo.svg" alt="logo" width="24" height="24" />
-          <span id="logo-text">Divvy</span>
-        </a>
-        <button
-          class="collapse-toggle"
-          aria-label="Collapse menu"
-          onclick="toggleSidebar()"
-          title="Thu nhỏ menu"
+      <button
+        class="collapse-toggle"
+        aria-label="Collapse menu"
+        onclick="toggleSidebar()"
+        title="Thu nhỏ menu"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
         >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M9 18l6-6-6-6" />
-          </svg>
-        </button>
-      </div>
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
       <ul class="nav-menu">
+        <li class="nav-logo-item">
+          <a class="logo" href="#top" aria-label="Spicy-Box logo">
+            <img src="./Logo.svg" alt="logo" width="24" height="24" />
+            <span id="logo-text">Divvy</span>
+          </a>
+        </li>
         <li>
           <a href="#gioi-thieu" data-tooltip="Giới thiệu">
             <span class="nav-icon">📋</span>
@@ -129,6 +129,12 @@
           </a>
         </li>
       </ul>
+      <div class="sidebar-footer">
+        <a class="logo" href="#top" aria-label="Spicy-Box logo">
+          <img src="./Logo.svg" alt="logo" width="24" height="24" />
+          <span id="logo-text">Divvy</span>
+        </a>
+      </div>
     </nav>
 
     <main id="top" class="main-content">
