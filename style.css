@@ -1294,7 +1294,7 @@ footer {
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   padding: 0;
-  /* box-shadow: var(--shadow); */
+  box-shadow: 0 10px 100px rgba(148, 163, 184, 0.5);
   overflow: hidden;
 }
 
@@ -1308,7 +1308,7 @@ footer {
 }
 
 #behance .embed-media {
-  background: #d4d3e8;
+  background: #ffffff;
 }
 
 .embed-media iframe {
