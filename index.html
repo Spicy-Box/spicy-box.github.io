@@ -20,27 +20,101 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
-      <div class="container nav">
+    <button
+      class="menu-toggle"
+      aria-label="Toggle menu"
+      onclick="toggleMobileMenu()"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleMobileMenu()"
+    ></div>
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
         <a class="logo" href="#top" aria-label="Spicy-Box logo">
           <img src="./Logo.svg" alt="logo" width="24" height="24" />
           <span id="logo-text">Divvy</span>
         </a>
-        <ul>
-          <li><a href="#gioi-thieu">Giới thiệu</a></li>
-          <li><a href="#tinh-nang">Tính năng</a></li>
-          <li><a href="#canvas">Canvas</a></li>
-          <li><a href="#behance">Behance</a></li>
-          <!-- NEW -->
-          <li><a href="#screenshots">Screenshot</a></li>
-          <li><a href="#cong-nghe">Công nghệ</a></li>
-          <li><a href="#thanh-vien">Thành viên</a></li>
-          <li><a href="#lien-ket">Liên kết</a></li>
-        </ul>
       </div>
-    </header>
+      <ul class="nav-menu">
+        <li>
+          <a href="#gioi-thieu" data-tooltip="Giới thiệu">
+            <span class="nav-icon">📋</span>
+            <span class="nav-text">Giới thiệu</span>
+          </a>
+        </li>
+        <li>
+          <a href="#canvas" data-tooltip="Business Canvas">
+            <span class="nav-icon">📊</span>
+            <span class="nav-text">Business Canvas</span>
+          </a>
+        </li>
+        <li>
+          <a href="#behance" data-tooltip="Behance">
+            <span class="nav-icon">🎨</span>
+            <span class="nav-text">Behance</span>
+          </a>
+        </li>
+        <li>
+          <a href="#figma" data-tooltip="Figma">
+            <span class="nav-icon">🎭</span>
+            <span class="nav-text">Figma</span>
+          </a>
+        </li>
+        <li>
+          <a href="#tinh-nang" data-tooltip="Tính năng">
+            <span class="nav-icon">⚡</span>
+            <span class="nav-text">Tính năng</span>
+          </a>
+        </li>
+        <li>
+          <a href="#screenshots" data-tooltip="Screenshot">
+            <span class="nav-icon">📸</span>
+            <span class="nav-text">Screenshot</span>
+          </a>
+        </li>
+        <li>
+          <a href="#cong-nghe" data-tooltip="Công nghệ">
+            <span class="nav-icon">💻</span>
+            <span class="nav-text">Công nghệ</span>
+          </a>
+        </li>
+        <li>
+          <a href="#lo-trinh" data-tooltip="Lộ trình">
+            <span class="nav-icon">🗓️</span>
+            <span class="nav-text">Lộ trình</span>
+          </a>
+        </li>
+        <li>
+          <a href="#thanh-vien" data-tooltip="Thành viên">
+            <span class="nav-icon">👥</span>
+            <span class="nav-text">Thành viên</span>
+          </a>
+        </li>
+        <li>
+          <a href="#lien-ket" data-tooltip="Liên kết">
+            <span class="nav-icon">🔗</span>
+            <span class="nav-text">Liên kết</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    <main id="top">
+    <main id="top" class="main-content">
       <section class="hero container">
         <span class="tag">Bài tập lớn • GitHub Pages</span>
         <h1>Divvy</h1>
@@ -58,54 +132,57 @@
         </div>
       </section>
 
-      <section id="gioi-thieu" class="container two-col">
-        <div class="card">
-          <h2>1) Tên dự án & mô tả vấn đề</h2>
-          <p>
-            <strong>Spicy-Box</strong> giải quyết bài toán chia tiền khi đi
-            ăn/đi chơi theo <em>món</em> hoặc <em>tỉ lệ</em>, hỗ trợ lưu lịch sử
-            và xuất báo cáo. Vấn đề thường gặp: hoá đơn lộn xộn, chụp ảnh mờ,
-            mỗi người ăn khác món, quên ghi nợ, nhầm lẫn khi hoàn tiền.
-          </p>
-          <ul class="list">
-            <li>
-              <strong>Đối tượng:</strong> Nhóm bạn, CLB, lớp học, team công ty.
-            </li>
-            <li>
-              <strong>Tình huống:</strong> Tạo sự kiện &gt; thêm hoá đơn &gt;
-              gán món cho người &gt; tự động tính &gt; thanh toán.
-            </li>
-            <li>
-              <strong>Giá trị:</strong> minh bạch, tự động hoá, đồng bộ đa thiết
-              bị.
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>2) Tính năng nổi bật</h2>
-          <ul class="list">
-            <li>
-              📸 <strong>OCR hoá đơn</strong> (nhận dạng mục & giá; có chỉnh sửa
-              thủ công).
-            </li>
-            <li>
-              🧮 <strong>Chia theo món/định lượng</strong>, chia đều, chia theo
-              trọng số.
-            </li>
-            <li>
-              👥 <strong>Nhóm & sự kiện</strong>: mời thành viên, phân quyền.
-            </li>
-            <li>💸 <strong>Gợi ý hoàn nợ</strong> tối ưu số giao dịch.</li>
-            <li>📄 <strong>Xuất PDF/Excel</strong>, thống kê theo tháng.</li>
-            <li>🌐 <strong>Đa ngôn ngữ</strong>, hoạt động offline-first.</li>
-          </ul>
+      <section id="gioi-thieu" class="container">
+        <h2 data-number="1">1) Giới thiệu</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Tên dự án & mô tả vấn đề</h3>
+            <p>
+              <strong>Spicy-Box</strong> giải quyết bài toán chia tiền khi đi
+              ăn/đi chơi theo <em>món</em> hoặc <em>tỉ lệ</em>, hỗ trợ lưu lịch
+              sử và xuất báo cáo. Vấn đề thường gặp: hoá đơn lộn xộn, chụp ảnh
+              mờ, mỗi người ăn khác món, quên ghi nợ, nhầm lẫn khi hoàn tiền.
+            </p>
+            <ul class="list">
+              <li>
+                <strong>Đối tượng:</strong> Nhóm bạn, CLB, lớp học, team công
+                ty.
+              </li>
+              <li>
+                <strong>Tình huống:</strong> Tạo sự kiện &gt; thêm hoá đơn &gt;
+                gán món cho người &gt; tự động tính &gt; thanh toán.
+              </li>
+              <li>
+                <strong>Giá trị:</strong> minh bạch, tự động hoá, đồng bộ đa
+                thiết bị.
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Tính năng nổi bật</h3>
+            <ul class="list">
+              <li>
+                📸 <strong>OCR hoá đơn</strong> (nhận dạng mục & giá; có chỉnh
+                sửa thủ công).
+              </li>
+              <li>
+                🧮 <strong>Chia theo món/định lượng</strong>, chia đều, chia
+                theo trọng số.
+              </li>
+              <li>
+                👥 <strong>Nhóm & sự kiện</strong>: mời thành viên, phân quyền.
+              </li>
+              <li>💸 <strong>Gợi ý hoàn nợ</strong> tối ưu số giao dịch.</li>
+              <li>📄 <strong>Xuất PDF/Excel</strong>, thống kê theo tháng.</li>
+              <li>🌐 <strong>Đa ngôn ngữ</strong>, hoạt động offline-first.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <br>
       <!-- BUSINESS MODEL CANVAS -->
       <section id="canvas" class="container">
-        <h2>Business Model Canvas</h2>
+        <h2 data-number="2">2) Business Model Canvas</h2>
         <div class="card">
           <figure class="bmc-figure">
             <!-- Bạn có thể đổi lại thành assets/bmc.png để tiện quản lý -->
@@ -124,7 +201,7 @@
 
       <!-- BEHANCE EMBED -->
       <section id="behance" class="container">
-        <h2>3) Behance Case Study</h2>
+        <h2 data-number="3">3) Behance Case Study</h2>
         <div class="embeds">
           <figure class="embed-card">
             <div class="embed-media">
@@ -137,7 +214,7 @@
                 frameborder="0"
                 allow="clipboard-write"
                 refererPolicy="strict-origin-when-cross-origin"
-              ></iframe>                            
+              ></iframe>
             </div>
             <figcaption class="embed-caption">
               <span class="title">Spicy-Box • Case Study</span>
@@ -155,10 +232,9 @@
         </div>
       </section>
 
-      
       <!-- FIGMA EMBED -->
       <section id="figma" class="container">
-        <h2>4) Figma Design</h2>
+        <h2 data-number="4">4) Figma Design</h2>
         <div class="embeds">
           <figure class="embed-card">
             <div class="embed-media">
@@ -189,28 +265,35 @@
         </div>
       </section>
 
-
-      
       <section id="tinh-nang" class="container">
-        <h2>5) Tính năng chính của MVP</h2>
+        <h2 data-number="5">5) Tính năng chính của MVP</h2>
         <div class="grid cols-2">
           <div class="card">
             <h3>Nhập hoá đơn bằng OCR (cơ bản)</h3>
-            <p>Thêm thủ công hoặc chụp ảnh để OCR, tự nhóm các mục tương tự. Phân bổ VAT/Service charge theo % hoặc theo món.</p>
+            <p>
+              Thêm thủ công hoặc chụp ảnh để OCR, tự nhóm các mục tương tự. Phân
+              bổ VAT/Service charge theo % hoặc theo món.
+            </p>
           </div>
           <div class="card">
             <h3>Đồng bộ đa thiết bị</h3>
-            <p>Hỗ trợ đăng nhập/đăng kí giúp phân quyền, đảm bảo dữ liệu không bị mất khi đổi thiết bị, hỗ trợ nhiều người dùng cùng tham gia nhóm chia tiền.
-.</p>
+            <p>
+              Hỗ trợ đăng nhập/đăng kí giúp phân quyền, đảm bảo dữ liệu không bị
+              mất khi đổi thiết bị, hỗ trợ nhiều người dùng cùng tham gia nhóm
+              chia tiền. .
+            </p>
           </div>
           <div class="card">
             <h3>Chia tiền thông minh</h3>
             <p>
-              Hỗ trợ nhiều phương thức chia tiền linh hoạt: Chia đều cho toàn bộ thành viên trong nhóm, chia theo món (người gọi món nào thì chỉ trả phần đó), Chia thủ công.
+              Hỗ trợ nhiều phương thức chia tiền linh hoạt: Chia đều cho toàn bộ
+              thành viên trong nhóm, chia theo món (người gọi món nào thì chỉ
+              trả phần đó), Chia thủ công.
             </p>
-            
+
             <p>
-              Cho phép gán “người thanh toán” (người tạm ứng trước) để sau khi chia. Ghi nhận trạng thái đã/đang nợ của từng người sau khi chia.
+              Cho phép gán “người thanh toán” (người tạm ứng trước) để sau khi
+              chia. Ghi nhận trạng thái đã/đang nợ của từng người sau khi chia.
             </p>
           </div>
           <div class="card">
@@ -221,7 +304,7 @@
       </section>
 
       <section id="screenshots" class="container">
-        <h2>6) Screenshot</h2>
+        <h2 data-number="6">6) Screenshot</h2>
         <div class="gallery">
           <img src="images/Mockup Main - 1.jpg" alt="Màn hình tạo sự kiện" />
           <img src="images/Mockup Main - 2.jpg" alt="OCR hoá đơn" />
@@ -233,7 +316,7 @@
       </section>
 
       <section id="cong-nghe" class="container">
-        <h2>7) Công nghệ sử dụng</h2>
+        <h2 data-number="7">7) Công nghệ sử dụng</h2>
         <div class="card">
           <p>
             <span class="badge">Mobile</span><span class="badge">Backend</span>
@@ -254,7 +337,7 @@
       </section>
 
       <section id="lo-trinh" class="container">
-        <h2>8) Lộ trình phát triển</h2>
+        <h2 data-number="8">8) Lộ trình phát triển</h2>
         <div class="card">
           <ul class="list">
             <li>
@@ -283,7 +366,7 @@
       </section>
 
       <section id="thanh-vien" class="container">
-        <h2>9) Thành viên nhóm</h2>
+        <h2 data-number="9">9) Thành viên nhóm</h2>
         <div class="grid cols-2">
           <div class="card">
             <ul class="list">
@@ -309,7 +392,7 @@
       </section>
 
       <section id="lien-ket" class="container">
-        <h2>10) Tài liệu & liên kết</h2>
+        <h2 data-number="10">10) Tài liệu & liên kết</h2>
         <div class="grid cols-2">
           <div class="card">
             <h3>Tài liệu chính</h3>
@@ -374,6 +457,88 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("collapsed");
+
+        // Save state to localStorage
+        if (sidebar.classList.contains("collapsed")) {
+          localStorage.setItem("sidebarCollapsed", "true");
+        } else {
+          localStorage.setItem("sidebarCollapsed", "false");
+        }
+      }
+
+      function toggleMobileMenu() {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
+        sidebar.classList.toggle("open");
+        overlay.classList.toggle("active");
+      }
+
+      function closeMobileMenu() {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
+        sidebar.classList.remove("open");
+        overlay.classList.remove("active");
+      }
+
+      // Close sidebar when clicking overlay on mobile
+      document
+        .getElementById("sidebarOverlay")
+        .addEventListener("click", function () {
+          closeMobileMenu();
+        });
+
+      // Close sidebar when clicking outside on mobile
+      document.addEventListener("click", function (event) {
+        const sidebar = document.getElementById("sidebar");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const overlay = document.getElementById("sidebarOverlay");
+
+        // Only handle on mobile screens
+        if (window.innerWidth <= 968) {
+          const isClickInsideSidebar = sidebar.contains(event.target);
+          const isClickOnToggle =
+            menuToggle && menuToggle.contains(event.target);
+          const isClickOnOverlay = overlay && overlay.contains(event.target);
+
+          // If sidebar is open and click is outside sidebar and toggle button, close it
+          if (
+            sidebar.classList.contains("open") &&
+            !isClickInsideSidebar &&
+            !isClickOnToggle &&
+            !isClickOnOverlay
+          ) {
+            closeMobileMenu();
+          }
+        }
+      });
+
+      // Close sidebar when clicking on menu links (navigation)
+      document.querySelectorAll(".nav-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (window.innerWidth <= 968) {
+            closeMobileMenu();
+          }
+        });
+      });
+
+      // Restore sidebar state on page load
+      window.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.getElementById("sidebar");
+        if (localStorage.getItem("sidebarCollapsed") === "true") {
+          sidebar.classList.add("collapsed");
+        }
+      });
+
+      // Handle window resize - close mobile menu when resizing to desktop
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 968) {
+          closeMobileMenu();
+        }
+      });
     </script>
   </body>
 </html>
